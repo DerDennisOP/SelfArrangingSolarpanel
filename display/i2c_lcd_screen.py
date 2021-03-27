@@ -2,6 +2,8 @@ from machine import I2C
 import time
 
 class Screen(object):
+    # TODO commando codes vergleichen und korrigieren, siehe 
+    # https://github.com/johnrickman/LiquidCrystal_I2C/blob/master/LiquidCrystal_I2C.h
     # commands
     LCD_CLEARDISPLAY = 0x01
     LCD_RETURNHOME = 0x02
@@ -135,3 +137,5 @@ class Screen(object):
     def home(self):
         self.cmd(self.LCD_RETURNHOME)
         time.sleep_ms(2) # 2m
+
+
