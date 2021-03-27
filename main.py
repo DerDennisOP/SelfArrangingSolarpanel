@@ -5,9 +5,8 @@ from lcd import I2cLcd
 def test_main():
     """Test function for verifying basic functionality."""
     print("Running test_main")
-    # On the RPi Pico, I2C0 shows up on GP8 (sda) and GP9 (scl)
     i2c = I2C(1, scl=Pin(5), sda=Pin(4), freq=400000)
-    lcd = I2cLcd(i2c, 0x, 4, 20)
+    lcd = I2cLcd(i2c, 0x27, 4, 20)
     lcd.putstr("It Works!\nSecond Line")
     sleep_ms(3000)
     lcd.clear()
